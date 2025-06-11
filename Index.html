@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Password Generator 🔐</h1>
+
+    <label for="length">Password Length:</label>
+    <input type="number" id="length" min="4" max="64" value="12" />
+
+    <div class="options">
+      <label><input type="checkbox" id="uppercase" checked /> Include Uppercase (A-Z)</label>
+      <label><input type="checkbox" id="lowercase" checked /> Include Lowercase (a-z)</label>
+      <label><input type="checkbox" id="numbers" checked /> Include Numbers (0-9)</label>
+      <label><input type="checkbox" id="special" /> Include Special Characters (!@#$...)</label>
+    </div>
+
+    <button id="generate-btn">Generate Password</button>
+
+    <textarea id="result" readonly placeholder="Your generated password will appear here"></textarea>
+
+    <button id="copy-btn" style="margin-top: 10px;">Copy to Clipboard 📋</button>
+
+    <div id="strength-container" style="margin-top: 15px; text-align: left;">
+      <label>Password Strength:</label>
+      <div id="strength-bar" style="
+        width: 100%; 
+        height: 15px; 
+        background: #ddd; 
+        border-radius: 8px; 
+        overflow: hidden;
+        margin-top: 5px;
+      ">
+        <div id="strength-fill" style="height: 100%; width: 0; background: red; transition: width 0.3s;"></div>
+      </div>
+      <p id="strength-text" style="margin: 5px 0 0; font-weight: 600;"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
